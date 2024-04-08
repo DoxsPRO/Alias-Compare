@@ -4,7 +4,8 @@ import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Textarea, Button } from "@nextui-org/react";
-import { start_OCR } from '../app/ocr.js';
+import OCRComponent from '../app/ocr.js';
+
 
 export default function Home() {
 
@@ -25,13 +26,8 @@ export default function Home() {
           <div className={styles.card}>
             <Image src="/images/prova.jpg" alt="test" width={300} height={300}></Image>
           </div>
-          <div className={styles.card}>
-
-            
-
-          </div>
           <div>
-            <Button onPress={(e) => start_OCR()} color='primary'>Start OCR</Button>
+          <OCRComponent />
           </div>
         </div>
 
