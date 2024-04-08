@@ -1,8 +1,9 @@
-import React from "react";
+
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
-import { Textarea } from "@nextui-org/react";
+import { Textarea, Button } from "@nextui-org/react";
+import {start_OCR} from '../app/ocr.js';
 
 export default function Home() {
   return (
@@ -32,8 +33,11 @@ export default function Home() {
               className="max-w-xs"
             />
           </div>
+         <div> 
+            <Button onPress={(e) => start_OCR()} color='primary'>Start OCR</Button>
+          </div> 
         </div>
-
+        
       </main>
 
       <footer>
