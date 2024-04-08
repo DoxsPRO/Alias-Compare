@@ -1,6 +1,7 @@
 import Tesseract from "tesseract.js";
 
 const { createWorker } = require('tesseract.js');
+
 export async function start_OCR() {
 
     const worker = await createWorker('ita');
@@ -12,3 +13,10 @@ export async function start_OCR() {
     })();
     
 }
+
+/*
+export async function performOCR(imageUrl) {
+    const { data: { text } } = await Tesseract.recognize(imageUrl);
+    return text;
+} 
+*/

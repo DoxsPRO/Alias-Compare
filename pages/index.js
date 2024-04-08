@@ -2,10 +2,13 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { Textarea, Button } from "@nextui-org/react";
-import {start_OCR} from '../app/ocr.js';
+import { start_OCR } from '../app/ocr.js';
 
 export default function Home() {
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,26 +21,20 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
         <div className={styles.grid}>
           <div className={styles.card}>
             <Image src="/images/prova.jpg" alt="test" width={300} height={300}></Image>
           </div>
           <div className={styles.card}>
-            <Textarea
-              label="Testo"
-              placeholder="Enter your description"
-              className="max-w-xs"
-            />
+
+            
+
           </div>
-         <div> 
+          <div>
             <Button onPress={(e) => start_OCR()} color='primary'>Start OCR</Button>
-          </div> 
+          </div>
         </div>
-        
+
       </main>
 
       <footer>
