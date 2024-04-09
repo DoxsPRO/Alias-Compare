@@ -4,27 +4,22 @@ import { createWorker } from 'tesseract.js';
 function OCRComponent() {
   const [ocrResult, setOCRResult] = useState(null);
 
-  const startOCR = async () => {
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return; // If no file selected, do nothing
+
     const worker = await createWorker('ita');
-    const { data: { text } } = await worker.recognize('/images/prova.jpg');
+    const { data: { text } } = await worker.recognize(file);
     setOCRResult(text);
     await worker.terminate();
   };
 
   return (
     <div>
-      <button onClick={startOCR}>Esegui OCR</button>
+      <input type="file" accept="image/*" onChange={handleFileChange} />
       {ocrResult && <p>Risultato OCR: {ocrResult}</p>}
     </div>
   );
 }
 
 export default OCRComponent;
-
-
-/*
-export async function performOCR(imageUrl) {
-    const { data: { text } } = await Tesseract.recognize(imageUrl);
-    return text;
-} 
-*/

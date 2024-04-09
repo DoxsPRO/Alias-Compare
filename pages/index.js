@@ -23,9 +23,6 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <div className={styles.card}>
-            <Image src="/images/prova.jpg" alt="test" width={300} height={300}></Image>
-          </div>
           <div>
           <OCRComponent />
           </div>
