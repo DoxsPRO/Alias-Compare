@@ -27,7 +27,6 @@ export default function Home() {
           <OCRComponent />
           </div>
         </div>
-
       </main>
 
       <footer>

@@ -1912,6 +1912,15 @@ commander@^4.0.0:
   resolved "https://registry.npmjs.org/commander/-/commander-4.1.1.tgz"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
+compromise@^14.13.0:
+  version "14.13.0"
+  resolved "https://registry.npmjs.org/compromise/-/compromise-14.13.0.tgz"
+  integrity sha512-NqGgcBTRF7Zs3kBWJjKWoYdYTu0tZRcR4yKIA6Ve3KxpD9tgkbDHiVnFrkNYMt26jScrfKPGfVVkGaW++gq4VQ==
+  dependencies:
+    efrt "2.7.0"
+    grad-school "0.0.5"
+    suffix-thumb "5.0.2"
+
 compute-scroll-into-view@^3.0.2:
   version "3.1.0"
   resolved "https://registry.npmjs.org/compute-scroll-into-view/-/compute-scroll-into-view-3.1.0.tgz"
@@ -1955,6 +1964,11 @@ eastasianwidth@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
+
+efrt@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.npmjs.org/efrt/-/efrt-2.7.0.tgz"
+  integrity sha512-/RInbCy1d4P6Zdfa+TMVsf/ufZVotat5hCw3QXmWtjU+3pFEOvOQ7ibo3aIxyCJw2leIeAMjmPj+1SLJiCpdrQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2057,6 +2071,11 @@ graceful-fs@^4.2.11:
   version "4.2.11"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+
+grad-school@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/grad-school/-/grad-school-0.0.5.tgz"
+  integrity sha512-rXunEHF9M9EkMydTBux7+IryYXEZinRk6g8OBOGDBzo/qWJjhTxy86i5q7lQYpCLHN8Sqv1XX3OIOc7ka2gtvQ==
 
 hasown@^2.0.0:
   version "2.0.2"
@@ -2618,6 +2637,11 @@ sucrase@^3.32.0:
     mz "^2.7.0"
     pirates "^4.0.1"
     ts-interface-checker "^0.1.9"
+
+suffix-thumb@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npmjs.org/suffix-thumb/-/suffix-thumb-5.0.2.tgz"
+  integrity sha512-I5PWXAFKx3FYnI9a+dQMWNqTxoRt6vdBdb0O+BJ1sxXCWtSoQCusc13E58f+9p4MYx/qCnEMkD5jac6K2j3dgA==
 
 supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
