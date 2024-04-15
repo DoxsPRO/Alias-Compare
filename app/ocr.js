@@ -24,10 +24,15 @@ function OCRComponent() {
       {ocrResult && <p>Risultato OCR: {ocrResult}</p>}
       {jsonObject && (
         <div>
-          <p>JSON:</p>
-          <pre>{JSON.stringify(jsonObject, null, 2)}</pre>
+          <p>Nominativi:</p>
+          <ul>
+            {jsonObject.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
         </div>
       )}
+
     </div>
   );
 }

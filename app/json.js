@@ -8,9 +8,9 @@ export const convertiTestoInJson = (testo) => {
   var datiPersona = {};
   const regexNome = /sotto\s*([^,;]+)/g;
   const regexCognomeNome = /([A-Z]+(?:\s+[A-Z]+)*)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)|([A-Z]+[a-z]+)\s*([A-Z][a-z]+)/;
-  let precedenti = [];
-  let precedente = {};
   const linee = testo.split('\n');
+  let nomiCognomiArray = []; // Dichiarazione dell'array per salvare nomi e cognomi
+
 
   linee.forEach((linea, index) => {
     //if (!(linea.startsWith('|') || linea.startsWith('*'))) {
@@ -24,29 +24,15 @@ export const convertiTestoInJson = (testo) => {
             var matchNome = datiPersona.match(regexCognomeNome);
             if (matchNome) {
               console.warn(matchNome[1] +" "+ matchNome[2]);
+              nomiCognomiArray.push(`${matchNome[1]} ${matchNome[2]}`);
             }
           }
           
         }
-      //const matches = linea.match(regexNome);
-      
-    //}
-    //console.log(linea);
-    //const [campo, valore] = linea.split(/:(.+)/).map(item => item.trim());
-    //console.log(campo, valore);
-    /*
-    if (linea === '|') {
-      datiPersona[campo.toLowerCase().replace(/ /g, '_')] = precedenti;
-    } else if (campo && valore) {
-      if (campo.startsWith('-')) {
-        precedenti.push(precedente);
-        precedente = {};
-      } else {
-        precedente[campo.toLowerCase().replace(/ /g, '_')] = valore;
-      }
-    }*/
   });
-  return datiPersona;
+  //datiPersona.nomiCognomi = nomiCognomiArray;
+
+  return nomiCognomiArray;
 };
 
 
