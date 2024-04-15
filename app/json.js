@@ -1,6 +1,6 @@
 
 function separaParoleAttaccate(stringa) {
-  return stringa.replace(/([a-z])([A-Z])|(\|)/g, '$1 $2').trim();
+  return stringa.replace(/([a-z])([A-Z])|(\|)|(\*)/g, '$1 $2').trim();
 };
 
 const riconosciNome = (testo) => {
@@ -16,8 +16,8 @@ const riconosciNome = (testo) => {
     //if (!(linea.startsWith('|') || linea.startsWith('*'))) {
     //console.log(linea);
     if (linea.match(regexNome)) {
-      if (linee[index + 1]) { //controlla se la linea succ esiste
-        datiPersona = linea + linee[index + 1];
+      if (linee[index + 1] && linee[index + 2]) { //controlla se la linea succ esiste
+        datiPersona = linea + linee[index + 1] + linee[index + 2];
         datiPersona.replace(/\n/g, ' ');
         datiPersona = separaParoleAttaccate(datiPersona);
         console.log(datiPersona);
