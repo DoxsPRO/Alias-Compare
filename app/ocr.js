@@ -4,7 +4,7 @@ import { riconosciNome } from '../app/json.js';
 
 function OCRComponent() {
   const [ocrResult, setOCRResult] = useState(null);
-  const [jsonObject, setJsonObject] = useState(null);
+  const [nomiPresi, setnomiPresi] = useState(null);
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
@@ -14,7 +14,7 @@ function OCRComponent() {
     const { data: { text } } = await worker.recognize(file);
     setOCRResult(text);
     const convertedJson = riconosciNome(text);
-    setJsonObject(convertedJson);
+    setnomiPresi(convertedJson);
     await worker.terminate();
   };
 
@@ -22,11 +22,11 @@ function OCRComponent() {
     <div>
       <input type="file" accept="image/*" onChange={handleFileChange} />
       {ocrResult && <p>Risultato OCR: {ocrResult}</p>}
-      {jsonObject && (
+      {nomiPresi && (
         <div>
           <p>Nominativi:</p>
           <ul>
-            {jsonObject.map((item, index) => (
+            {nomiPresi.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
