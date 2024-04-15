@@ -14,33 +14,29 @@ const riconosciNome = (testo) => {
 
   linee.forEach((linea, index) => {
     //if (!(linea.startsWith('|') || linea.startsWith('*'))) {
-      //console.log(linea);
-        if(linea.match(regexNome)) {
-          if (linee[index + 1]){ //controlla se la linea succ esiste
-            datiPersona = linea + linee[index + 1];
-            datiPersona.replace(/\n/g, ' ');
-            datiPersona = separaParoleAttaccate(datiPersona);
-            console.log(datiPersona);
-            var matchNome = datiPersona.match(regexCognomeNome);
-            if (matchNome) {
-              console.warn(matchNome[1] +" "+ matchNome[2]);
-              nomiCognomiArray.push(`${matchNome[1]} ${matchNome[2]}`);
-            }
-          }
-          
+    //console.log(linea);
+    if (linea.match(regexNome)) {
+      if (linee[index + 1]) { //controlla se la linea succ esiste
+        datiPersona = linea + linee[index + 1];
+        datiPersona.replace(/\n/g, ' ');
+        datiPersona = separaParoleAttaccate(datiPersona);
+        console.log(datiPersona);
+        var matchNome = datiPersona.match(regexCognomeNome);
+        if (matchNome) {
+          console.warn(matchNome[1] + " " + matchNome[2]);
+          nomiCognomiArray.push(`${matchNome[1]} ${matchNome[2]}`);
         }
+      }
+
+    }
   });
   //datiPersona.nomiCognomi = nomiCognomiArray;
 
   return nomiCognomiArray;
 };
 
-const riconosciNascita = (testo) => {
 
-};
-
-export function riconosciNominativo(textPass)
-{
+export function riconosciNominativo(textPass) {
   return riconosciNome(textPass);
 }
 
