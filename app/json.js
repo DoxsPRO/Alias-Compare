@@ -1,6 +1,6 @@
 
 function separaParoleAttaccate(stringa) {
-  return stringa.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+  return stringa.replace(/([a-z])([A-Z])|(\|)/g, '$1 $2').trim();
 }
 
 export const convertiTestoInJson = (testo) => {
