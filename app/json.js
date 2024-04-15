@@ -7,8 +7,6 @@ export const convertiTestoInJson = (testo) => {
   //console.log(testo);
   var datiPersona = {};
   const regexNome = /sotto\s*([^,;]+)/g;
-  //const regexCognomeNome = /([A-Z]+(?:\s+[A-Z]+)*)\s+(?:\||)([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)(?:\s{2,}|\n|,)/;
-  //const regexCognomeNome = /([A-Z]+(?:\s+[A-Z]+)*)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*),/;
   const regexCognomeNome = /([A-Z]+(?:\s+[A-Z]+)*)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)|([A-Z]+[a-z]+)\s*([A-Z][a-z]+)/;
   let precedenti = [];
   let precedente = {};
@@ -51,27 +49,5 @@ export const convertiTestoInJson = (testo) => {
   return datiPersona;
 };
 
-/*export const convertiTestoInJson = (testo) => {
-  //console.log(testo);
-  const datiPersona = {};
-  let precedenti = [];
-  let precedente = {};
-  testo.split('\n').forEach((linea) => {
-    //console.log(linea);
-    //const [campo, valore] = linea.split(/:(.+)/).map(item => item.trim());
-    //console.log(campo, valore);
-    if (campo === 'Precedenti') {
-      datiPersona[campo.toLowerCase().replace(/ /g, '_')] = precedenti;
-    } else if (campo && valore) {
-      if (campo.startsWith('-')) {
-        precedenti.push(precedente);
-        precedente = {};
-      } else {
-        precedente[campo.toLowerCase().replace(/ /g, '_')] = valore;
-      }
-    }
-  });
-  return datiPersona;
-}; */
 
 
