@@ -30,7 +30,7 @@ const riconosciNome = (testo) => {
         }
         var matchData = datiPersona.match(regexData);
         if(matchData) {
-          console.info(matchData);
+          console.info(matchData)
         }
       }
 
