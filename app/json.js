@@ -3,7 +3,7 @@ function separaParoleAttaccate(stringa) {
   return stringa.replace(/([a-z])([A-Z])|(\|)/g, '$1 $2').trim();
 }
 
-export const convertiTestoInJson = (testo) => {
+export const riconosciNome = (testo) => {
   //console.log(testo);
   var datiPersona = {};
   const regexNome = /sotto\s*([^,;]+)/g;
