@@ -24,7 +24,7 @@ function OCRComponent() {
       {ocrResult && <p>Risultato OCR: {ocrResult}</p>}
       {nomiPresi && (
         <div>
-          <p>Nominativi:</p>
+          <p>Nominativi Rilevati:</p>
           <ul>
             {nomiPresi.map((item, index) => (
               <li key={index}>{item}</li>
