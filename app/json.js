@@ -3,7 +3,7 @@ function separaParoleAttaccate(stringa) {
   return stringa.replace(/([a-z])([A-Z])|(\|)|(\*)/g, '$1 $2').trim();
 };
 
-const riconosciNome = (testo) => {
+export const riconosciNome = (testo) => {
   //console.log(testo);
   var datiPersona = {};
   let RilArray = []; // Dichiarazione dell'array per salvare nomi e cognomi
@@ -49,9 +49,5 @@ const riconosciNome = (testo) => {
   return RilArray;
 };
 
-
-export function riconosciNominativo(textPass) {
-  return riconosciNome(textPass);
-}
 
 

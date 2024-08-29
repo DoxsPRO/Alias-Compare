@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { createWorker } from 'tesseract.js';
-import { riconosciNominativo } from '../app/json.js';
+import { riconosciNome } from '../app/json.js';
 
 function OCRComponent() {
   const [ocrResult, setOCRResult] = useState(null);
@@ -13,8 +13,8 @@ function OCRComponent() {
     const worker = await createWorker('ita');
     const { data: { text } } = await worker.recognize(file);
     setOCRResult(text);
-    const convertedJson = riconosciNominativo(text);
-    setnomiPresi(convertedJson);
+    const valNomi = riconosciNome(text);
+    setnomiPresi(valNomi);
     await worker.terminate();
   };
 
